@@ -30,5 +30,6 @@ export default new Router({
       heading: 'Edit Todo',
       component: EditTodo
     }
-  ]
+  ],
+  linkActiveClass: 'is-active'
 })
