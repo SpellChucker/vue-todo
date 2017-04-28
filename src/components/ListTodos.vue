@@ -27,28 +27,8 @@ export default {
     return {
       header: 'Todos List',
       // Mocked right now.
-      items: [
-        {
-          id: 1,
-          title: 'Test todo #1',
-          description: 'Test todo description #1'
-        },
-        {
-          id: 2,
-          title: 'Test todo #2',
-          description: 'Test todo description #2'
-        },
-        {
-          id: 3,
-          title: 'Test todo #3',
-          description: 'Test todo description #3'
-        }
-      ]
+      items: this.$store.state.todos
     }
-  },
-  created () {
-    // Initialize the todos in Vuex.
-    this.$store.commit('INIT_TODOS', this.items)
   }
 }
 </script>

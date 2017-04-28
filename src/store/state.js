@@ -12,7 +12,23 @@ let syncedData = {
   user: {
     name: null
   },
-  todos: []
+  todos: [
+    {
+      id: 1,
+      title: 'Test todo #1',
+      description: 'Test todo description #1'
+    },
+    {
+      id: 2,
+      title: 'Test todo #2',
+      description: 'Test todo description #2'
+    },
+    {
+      id: 3,
+      title: 'Test todo #3',
+      description: 'Test todo description #3'
+    }
+  ]
 }
 
 // Sync with local storage.

@@ -22,17 +22,19 @@ export default {
     return {
       title: 'Edit Todo Item',
       subtitle: 'Provide a title and description for your to-do item.',
-      todo: {
-        title: '',
-        description: ''
-      }
+      todo: {},
+      allTodos: []
     }
   },
   created () {
+    this.allTodos = this.$store.state.todos
     // Call the endpoint here or find a better way to get the information
     // for the item we're editing.
-    this.todo = this.$store.state.todos[this.$route.params.id - 1]
-    // this.$router.push('/todos/')
+    let id = parseInt(this.$route.params.id) - 1
+
+    if (this.allTodos[id] !== undefined) {
+      this.todo = this.allTodos[id]
+    }
   }
 }
 </script>
