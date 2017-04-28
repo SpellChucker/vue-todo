@@ -47,8 +47,8 @@ export default {
     }
   },
   created () {
-    // Call the endpoint here to retrieve all todo items.
-
+    // Initialize the todos in Vuex.
+    this.$store.commit('INIT_TODOS', this.items)
   }
 }
 </script>

@@ -7,11 +7,15 @@
     <input type="text" name="title" v-model="todo.title" class="input">
     <label for="description" class="label">Description</label>
     <textarea name="description" class="textarea" v-model="todo.description"></textarea>
-    <button class="button is-primary" style="margin-top: 10px;">Submit</button>
+    <div class="block" style="margin-top: 10px;">
+      <button class="button is-primary">Submit</button>
+      <button class="button" @click="$router.push('/todos')">Cancel</button>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'todo-list',
   data () {
@@ -27,7 +31,8 @@ export default {
   created () {
     // Call the endpoint here or find a better way to get the information
     // for the item we're editing.
-
+    this.todo = this.$store.state.todos[this.$route.params.id - 1]
+    // this.$router.push('/todos/')
   }
 }
 </script>
