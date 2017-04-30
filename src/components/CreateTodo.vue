@@ -7,7 +7,7 @@
     <input type="text" name="title" v-model="todo.title" class="input">
     <label for="description" class="label">Description</label>
     <textarea name="description" class="textarea" v-model="todo.description"></textarea>
-    <button class="button is-primary" style="margin-top: 10px;">Submit</button>
+    <button class="button is-primary" style="margin-top: 10px;" @click="addTodo">Submit</button>
   </div>
 </template>
 
@@ -22,6 +22,12 @@ export default {
         title: '',
         description: ''
       }
+    }
+  },
+  methods: {
+    addTodo () {
+      this.$store.commit('ADD_TODO', this.todo)
+      this.$router.push('/todos')
     }
   }
 }

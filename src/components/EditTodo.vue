@@ -8,7 +8,7 @@
     <label for="description" class="label">Description</label>
     <textarea name="description" class="textarea" v-model="todo.description"></textarea>
     <div class="block" style="margin-top: 10px;">
-      <button class="button is-primary">Submit</button>
+      <button class="button is-primary" @click="updateTodo">Submit</button>
       <button class="button" @click="$router.push('/todos')">Cancel</button>
     </div>
   </div>
@@ -34,6 +34,12 @@ export default {
 
     if (this.allTodos[id] !== undefined) {
       this.todo = this.allTodos[id]
+    }
+  },
+  methods: {
+    updateTodo () {
+      this.$store.commit('UPDATE_TODO', this.todo)
+      this.$router.push('/todos')
     }
   }
 }
